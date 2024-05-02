@@ -9,6 +9,7 @@ int main(int agrc, char* agrv[]) {
 	std::string password;
 	
 	const std::string pastDataBase = "C:/Users/****/source/repos/Login/Login_1/dataBase.txt";
+	std::ofstream dataBase(pastDataBase.c_str(), std::ios::app);
 	
 	std::cout << "Username : ";
 	std::cin >> username;
@@ -24,8 +25,6 @@ int main(int agrc, char* agrv[]) {
 	if (!AccountOne.IsPasswordCorrect()) {
 		return 0;
 	}
-
-	std::ofstream dataBase(pastDataBase.c_str(), std::ios::app);
 
 	if (dataBase) {
 		dataBase << "Username : " << username << std::endl;
